@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ma Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .navbar-spacer {
+            flex: 1; /* Utilisez flex pour que l'espace soit distribué automatiquement */
+        }
+        #navbarNav{
+            margin-left: 75%;
+        }
+    </style>
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Mon site</a>
+        <div class="mr-auto"></div> <!-- Cet élément ajoute de l'espace -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Ajouter</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="liste.html">Liste</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Mon profile</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      
+
+<!-- Votre contenu va ici -->
+
+<div class="container">
+    <h1>Profil utilisateur</h1>
+
+    <div id="profil-info">
+        <p>Nom: Jean Dupont</p>
+        <p>Email: jeandupont@exemple.com</p>
+        <p>Téléphone: 0123456789</p>
+    </div>
+
+    <div id="modifier-profil" style="display: none;">
+        <h2>Modifier le profil</h2>
+        <form>
+            <div class="form-group">
+                <label for="nom">Nom:</label>
+                <input type="text" class="form-control" id="nom" placeholder="Entrez votre nom">
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" placeholder="Entrez votre email">
+            </div>
+            <div class="form-group">
+                <label for="telephone">Téléphone:</label>
+                <input type="tel" class="form-control" id="telephone" placeholder="Entrez votre numéro de téléphone">
+            </div>
+            <button type="submit" class="btn btn-primary">Enregistrer</button>
+        </form>
+    </div>
+
+    <button id="modifier-btn" class="btn btn-secondary">Modifier le profil</button>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        $("#modifier-btn").click(function() {
+            $("#profil-info").hide();
+            $("#modifier-profil").show();
+        });
+    });
+</script>
+</body>
+</html>

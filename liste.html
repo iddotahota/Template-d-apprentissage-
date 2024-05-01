@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ma Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .navbar-spacer {
+            flex: 1; /* Utilisez flex pour que l'espace soit distribué automatiquement */
+        }
+        #navbarNav{
+            margin-left: 75%;
+        }
+    </style>
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Mon site</a>
+        <div class="mr-auto"></div> <!-- Cet élément ajoute de l'espace -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Ajouter</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Liste</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="profile.html">Mon profile</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      
+
+<!-- Votre contenu va ici -->
+    <div class="container">
+        <h2>Liste des étudiants</h2>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>N°</th>
+                    <th>Nom</th>
+                    <th>Prénom</th>
+                    <th>Sexe</th>
+                    <th>Téléphone</th>
+                    <th>Filière</th>
+                    <th>E-mail</th>
+                    <th>Photo</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>01</td>
+                    <td>AZERTY</td>
+                    <td>Azerty</td>
+                    <td>M</td>
+                    <td>014512</td>
+                    <td>Informatique</td>
+                    <td>azerty@gmail.com</td>
+                    <td>
+                        <img src="" alt="Image" style="max-width: 100px;">
+                    </td>
+                    <td>
+                        <button class="btn btn-primary btn-sm" onclick="window.location=''">Modifier</button>
+                        <button class="btn btn-danger btn-sm" onclick="confirmerSuppression()">Supprimer</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+<!-- Modal de confirmation de suppression -->
+<div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="confirmModalLabel">Confirmation de suppression</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Êtes-vous sûr de vouloir supprimer cet étudiant ?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                <form id="deleteForm" method="POST" style="display: inline;">
+                    <button type="submit" class="btn btn-danger">Supprimer</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    function confirmerSuppression(etudiantId) {
+        var form = document.getElementById('deleteForm');
+        form.action = 'liste.html';
+        var modal = new bootstrap.Modal(document.getElementById('confirmModal'), {keyboard: false});
+        modal.show();
+    }
+</script>
+
+</body>
+</html>
+
+
+
+
+
